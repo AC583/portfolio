@@ -1,10 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 
 export default function Hero() {
-  const [isDark, setIsDark] = useState(true)
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-surface text-on-background">
@@ -76,10 +80,16 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <button className="w-full md:w-auto px-8 py-4 bg-primary text-on-primary font-bold rounded neon-border transition-all duration-300">
+          <button
+            onClick={() => scrollToSection('projects')}
+            className="w-full md:w-auto px-8 py-4 bg-primary text-on-primary font-bold rounded neon-border transition-all duration-300"
+          >
             View Projects
           </button>
-          <button className="w-full md:w-auto px-8 py-4 bg-transparent border border-white/20 text-on-background font-bold rounded hover:bg-white/5 transition-all duration-300">
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="w-full md:w-auto px-8 py-4 bg-transparent border border-white/20 text-on-background font-bold rounded hover:bg-white/5 transition-all duration-300"
+          >
             Contact Me
           </button>
         </motion.div>
@@ -97,13 +107,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Theme toggle */}
-      <button
-        onClick={() => setIsDark(!isDark)}
-        className="absolute top-20 right-4 p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-on-surface-variant text-xs"
-      >
-        {isDark ? '☀️' : '🌙'}
-      </button>
     </section>
   )
 }
