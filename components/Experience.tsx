@@ -4,46 +4,18 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    year: '2024',
-    title: 'Software Engineering Intern',
-    company: 'Tech Corp',
-    description: 'Developed full-stack web applications using React and Node.js. Collaborated with cross-functional teams to deliver scalable solutions.',
-    type: 'work'
-  },
-  {
-    year: '2023',
-    title: 'Hackathon Winner',
-    company: 'University Hackathon',
-    description: 'Led a team to build an IoT smart agriculture system, winning first place in the hardware category.',
-    type: 'achievement'
-  },
-  {
-    year: '2023',
-    title: 'Embedded Systems Project',
-    company: 'Personal Project',
-    description: 'Designed and implemented a low-power wireless sensor network using ESP32 microcontrollers.',
-    type: 'project'
-  },
-  {
-    year: '2022',
-    title: 'Teaching Assistant',
-    company: 'Computer Science Department',
-    description: 'Assisted in teaching data structures and algorithms, helping students with programming assignments.',
+    year: 'Jul 2025 – Aug 2025',
+    title: 'Microelectronics',
+    company: 'Beaverworks Summer Institute',
+    description: 'Studied electrical engineering theory behind semiconductors; gained hands-on experience with various microelectronic components; built and presented a microelectronics project developing problem solving and communication skills with a team.',
     type: 'education'
   },
   {
-    year: '2022',
-    title: 'FPGA Design Competition',
-    company: 'Regional Competition',
-    description: 'Developed a real-time image processing system on FPGA, achieving top 10 placement.',
-    type: 'achievement'
-  },
-  {
-    year: '2021',
-    title: 'Web Development Internship',
-    company: 'Startup Inc',
-    description: 'Built responsive web interfaces and integrated REST APIs for a fintech application.',
-    type: 'work'
+    year: 'Sep 2022 – Jun 2026',
+    title: 'Senior',
+    company: 'Queens High School for the Sciences at York College',
+    description: 'Grade: Senior. Activities and societies: Robotics Team, Science Olympiad Team, Hackathon Committee',
+    type: 'education'
   }
 ]
 

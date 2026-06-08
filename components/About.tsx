@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function About() {
   const skills = {
@@ -34,13 +35,22 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          className="text-center mb-16"
+          className="flex flex-col md:flex-row items-center gap-10 mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <p className="text-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+          <div className="w-[180px] h-[180px] shrink-0 rounded-full overflow-hidden ring-2 ring-primary/30 shadow-[0_0_30px_rgba(0,240,255,0.15)]">
+            <Image
+              src="/photo.png"
+              alt="Adrian Huang"
+              width={180}
+              height={180}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <p className="text-lg text-on-surface-variant leading-relaxed">
             I'm a dedicated Computer Science and Electrical & Computer Engineering student with a passion for
             creating innovative solutions that bridge the gap between software and hardware. My experience spans
             full-stack development, embedded systems, and machine learning, with a focus on building scalable
