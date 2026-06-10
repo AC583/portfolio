@@ -2,6 +2,7 @@
 
 import { m } from 'framer-motion'
 import Image from 'next/image'
+import photo from '../public/photo.png'
 
 const skills = {
   'Programming Languages': ['Python', 'JavaScript', 'TypeScript', 'C++', 'Java'],
@@ -49,7 +50,7 @@ export default function About() {
             transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.3 }}
           >
             <Image
-              src="/photo.png"
+              src={photo}
               alt="Adrian Huang"
               width={180}
               height={180}
