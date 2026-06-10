@@ -511,6 +511,9 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+.pointer-events-none{
+  pointer-events: none;
+}
 .fixed{
   position: fixed;
 }
@@ -538,6 +541,9 @@ video {
 .left-\[11px\]{
   left: 11px;
 }
+.right-0{
+  right: 0px;
+}
 .top-0{
   top: 0px;
 }
@@ -547,11 +553,17 @@ video {
 .top-2{
   top: 0.5rem;
 }
+.z-0{
+  z-index: 0;
+}
 .z-10{
   z-index: 10;
 }
 .z-50{
   z-index: 50;
+}
+.z-\[100\]{
+  z-index: 100;
 }
 .mx-10{
   margin-left: 2.5rem;
@@ -621,6 +633,9 @@ video {
 .h-\[180px\]{
   height: 180px;
 }
+.h-\[2px\]{
+  height: 2px;
+}
 .h-full{
   height: 100%;
 }
@@ -668,6 +683,12 @@ video {
 }
 .shrink-0{
   flex-shrink: 0;
+}
+.origin-left{
+  transform-origin: left;
+}
+.origin-top{
+  transform-origin: top;
 }
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
@@ -871,6 +892,10 @@ video {
   --tw-gradient-to: rgb(125 244 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #7df4ff var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
+.via-primary\/50{
+  --tw-gradient-to: rgb(219 252 255 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(219 252 255 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
 .via-surface\/40{
   --tw-gradient-to: rgb(19 19 20 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(19 19 20 / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -880,6 +905,9 @@ video {
 }
 .to-surface{
   --tw-gradient-to: #131314 var(--tw-gradient-to-position);
+}
+.to-transparent{
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
 .bg-clip-text{
   -webkit-background-clip: text;
@@ -1055,9 +1083,6 @@ video {
   --tw-placeholder-opacity: 1;
   color: rgb(132 148 149 / var(--tw-placeholder-opacity, 1));
 }
-.opacity-40{
-  opacity: 0.4;
-}
 .opacity-50{
   opacity: 0.5;
 }
@@ -1071,6 +1096,11 @@ video {
   --tw-shadow-colored: 0 0 30px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow-\[0_0_8px_rgba\(0\2c 240\2c 255\2c 0\.5\)\]{
+  --tw-shadow: 0 0 8px rgba(0,240,255,0.5);
+  --tw-shadow-colored: 0 0 8px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .ring-2{
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1078,6 +1108,13 @@ video {
 }
 .ring-primary\/30{
   --tw-ring-color: rgb(219 252 255 / 0.3);
+}
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .backdrop-blur-xl{
   --tw-backdrop-blur: blur(24px);
@@ -1121,6 +1158,10 @@ body {
   background: #131314;
   color: #e5e2e3;
   min-height: 100vh;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 ::-webkit-scrollbar {

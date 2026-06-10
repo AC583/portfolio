@@ -13,7 +13,6 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
     console.log('Form submitted:', formData)
   }
 
@@ -25,14 +24,14 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-24 px-4 bg-surface-container text-on-background" id="contact">
+    <section className="py-24 px-4 bg-surface-container text-on-background relative z-10" id="contact">
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-12"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
         >
           <span className="text-[10px] uppercase tracking-widest text-primary font-mono mb-2 block">Open Channel</span>
           <h2 className="text-4xl md:text-5xl font-bold text-on-background tracking-tight font-sans">
@@ -43,10 +42,10 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -30, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: '-80px' }}
           >
             <h3 className="text-lg font-semibold mb-6 text-on-background font-sans tracking-tight uppercase text-xs tracking-widest text-on-surface-variant">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -98,10 +97,10 @@ export default function Contact() {
 
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: 30, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: '-80px' }}
           >
             <h3 className="text-[10px] uppercase tracking-widest text-on-surface-variant font-mono mb-6">Let's Connect</h3>
             <p className="text-on-surface-variant mb-8 text-sm leading-relaxed">

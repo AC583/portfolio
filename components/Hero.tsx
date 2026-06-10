@@ -12,8 +12,6 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-surface text-on-background">
-      {/* Grid background */}
-      <div className="absolute inset-0 grid-bg opacity-40"></div>
       {/* Gradient overlay + particles */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface">
         {[...Array(50)].map((_, i) => (

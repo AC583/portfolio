@@ -35,14 +35,14 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-24 px-4 bg-surface-container-lowest text-on-background" id="projects">
+    <section className="py-24 px-4 bg-surface-container-lowest text-on-background relative z-10" id="projects">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-80px' }}
         >
           <div>
             <span className="text-[10px] uppercase tracking-widest text-primary font-mono mb-2 block">System Registry</span>
@@ -59,10 +59,10 @@ export default function Projects() {
             <motion.div
               key={project.title}
               className="glass-panel rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-500 group flex flex-col"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.1, delay: index * 0.01, ease: [0.25, 0.1, 0.25, 1] }}
+              viewport={{ once: true, margin: '-80px' }}
               whileHover={{ y: -4 }}
             >
               <div className="p-6 flex flex-col flex-1">
