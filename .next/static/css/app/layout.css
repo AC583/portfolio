@@ -1216,6 +1216,15 @@ body {
   border-color: rgba(220, 184, 255, 0.8);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .hover\:border-primary\/30:hover{
   border-color: rgb(219 252 255 / 0.3);
 }

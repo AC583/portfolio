@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { useState } from 'react'
 import { Mail, Github, Linkedin, Send } from 'lucide-react'
 
@@ -26,7 +26,7 @@ export default function Contact() {
   return (
     <section className="py-24 px-4 bg-surface-container text-on-background relative z-10" id="contact">
       <div className="max-w-4xl mx-auto">
-        <motion.div
+        <m.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -37,11 +37,11 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold text-on-background tracking-tight font-sans">
             Get In Touch
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -30, filter: 'blur(4px)' }}
             whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -50,8 +50,9 @@ export default function Contact() {
             <h3 className="text-lg font-semibold mb-6 text-on-background font-sans tracking-tight uppercase text-xs tracking-widest text-on-surface-variant">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono">Name</label>
+                <label htmlFor="name" className="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono">Name</label>
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   placeholder="Input user_name"
@@ -62,8 +63,9 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono">Email</label>
+                <label htmlFor="email" className="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono">Email</label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   placeholder="user@domain.com"
@@ -74,8 +76,9 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono">Message</label>
+                <label htmlFor="message" className="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono">Message</label>
                 <textarea
+                  id="message"
                   name="message"
                   placeholder="Enter transmission payload..."
                   value={formData.message}
@@ -93,19 +96,19 @@ export default function Contact() {
                 Send Transmission
               </button>
             </form>
-          </motion.div>
+          </m.div>
 
           {/* Contact Info */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 30, filter: 'blur(4px)' }}
             whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true, margin: '-80px' }}
           >
-            <h3 className="text-[10px] uppercase tracking-widest text-on-surface-variant font-mono mb-6">Let's Connect</h3>
+            <h3 className="text-[10px] uppercase tracking-widest text-on-surface-variant font-mono mb-6">Let&apos;s Connect</h3>
             <p className="text-on-surface-variant mb-8 text-sm leading-relaxed">
-              I'm always interested in new opportunities and collaborations.
-              Feel free to reach out if you'd like to work together or just have a chat!
+              I&apos;m always interested in new opportunities and collaborations.
+              Feel free to reach out if you&apos;d like to work together or just have a chat!
             </p>
 
             <div className="space-y-4 mb-8">
@@ -143,7 +146,7 @@ export default function Contact() {
                 feel free to connect on LinkedIn.
               </p>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

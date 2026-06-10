@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const experiences = [
   {
@@ -23,7 +23,7 @@ export default function Experience() {
   return (
     <section className="py-24 px-4 bg-surface text-on-background relative z-10" id="experience">
       <div className="max-w-4xl mx-auto">
-        <motion.div
+        <m.div
           className="mb-16"
           initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -34,11 +34,11 @@ export default function Experience() {
           <h2 className="text-4xl md:text-5xl font-bold text-on-background tracking-tight font-sans">
             Experience & Achievements
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="relative">
           {/* Timeline vertical line */}
-          <motion.div
+          <m.div
             className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent origin-top"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
@@ -47,7 +47,7 @@ export default function Experience() {
           />
 
           {experiences.map((exp, index) => (
-            <motion.div
+            <m.div
               key={`${exp.year}-${exp.title}`}
               className="relative flex items-start mb-10 pl-12"
               initial={{ opacity: 0, x: -30, filter: 'blur(4px)' }}
@@ -72,7 +72,7 @@ export default function Experience() {
                 <p className="text-secondary text-sm mb-2 font-medium">{exp.company}</p>
                 <p className="text-on-surface-variant text-sm leading-relaxed">{exp.description}</p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

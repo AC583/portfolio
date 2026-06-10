@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 
 const projects = [
@@ -37,7 +37,7 @@ export default function Projects() {
   return (
     <section className="py-24 px-4 bg-surface-container-lowest text-on-background relative z-10" id="projects">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+        <m.div
           className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
           initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -52,11 +52,11 @@ export default function Projects() {
           </div>
           <div className="h-px flex-1 bg-white/10 hidden md:block mx-10 mb-2"></div>
           <p className="text-on-surface-variant max-w-xs text-sm">A selection of end-to-end engineered solutions across the stack.</p>
-        </motion.div>
+        </m.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.div
+            <m.div
               key={project.title}
               className="glass-panel rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-500 group flex flex-col"
               initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
@@ -104,7 +104,7 @@ export default function Projects() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

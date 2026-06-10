@@ -1,27 +1,27 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Image from 'next/image'
 
+const skills = {
+  'Programming Languages': ['Python', 'JavaScript', 'TypeScript', 'C++', 'Java'],
+  'Frameworks': ['React', 'Next.js', 'Node.js', 'Express', 'Django'],
+  'Tools': ['Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL'],
+  'Hardware/Electronics': ['Arduino', 'Raspberry Pi', 'Verilog', 'FPGA', 'Circuit Design']
+}
+
+const categoryColors: Record<string, string> = {
+  'Programming Languages': 'text-primary',
+  'Frameworks': 'text-secondary',
+  'Tools': 'text-tertiary',
+  'Hardware/Electronics': 'text-primary-fixed',
+}
+
 export default function About() {
-  const skills = {
-    'Programming Languages': ['Python', 'JavaScript', 'TypeScript', 'C++', 'Java'],
-    'Frameworks': ['React', 'Next.js', 'Node.js', 'Express', 'Django'],
-    'Tools': ['Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL'],
-    'Hardware/Electronics': ['Arduino', 'Raspberry Pi', 'Verilog', 'FPGA', 'Circuit Design']
-  }
-
-  const categoryColors: Record<string, string> = {
-    'Programming Languages': 'text-primary',
-    'Frameworks': 'text-secondary',
-    'Tools': 'text-tertiary',
-    'Hardware/Electronics': 'text-primary-fixed',
-  }
-
   return (
     <section className="py-24 px-4 bg-surface text-on-background relative z-10" id="about">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+        <m.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -32,18 +32,18 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-bold text-on-background tracking-tight font-sans">
             About Me
           </h2>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="flex flex-col md:flex-row items-center gap-10 mb-16"
           initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, margin: '-80px' }}
         >
-          <motion.div
+          <m.div
             className="w-[180px] h-[180px] shrink-0 rounded-full overflow-hidden ring-2 ring-primary/30 shadow-[0_0_30px_rgba(0,240,255,0.15)]"
-            initial={{ scale: 0, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.3 }}
@@ -55,18 +55,18 @@ export default function About() {
               height={180}
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </m.div>
           <p className="text-lg text-on-surface-variant leading-relaxed">
-            I'm a dedicated Computer Science and Electrical & Computer Engineering student with a passion for
+            I&apos;m a dedicated Computer Science and Electrical & Computer Engineering student with a passion for
             creating innovative solutions that bridge the gap between software and hardware. My experience spans
             full-stack development, embedded systems, and machine learning, with a focus on building scalable
             and efficient applications.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {Object.entries(skills).map(([category, skillList], index) => (
-            <motion.div
+            <m.div
               key={category}
               className="glass-panel rounded-xl p-6 hover:border-white/20 transition-all duration-300 group"
               initial={{ opacity: 0, y: 30, x: index % 2 === 0 ? -20 : 20, filter: 'blur(4px)' }}
@@ -83,7 +83,7 @@ export default function About() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

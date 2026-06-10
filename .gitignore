@@ -8,3 +8,13 @@ coverage/
 *.env
 .DS_Store
 *.pem   
+*.key
+*.crt
+*.pfx
+*.cer
+*.csr
+*.der
+*.jks
+*.keystore
+*.p12
+*.pem       

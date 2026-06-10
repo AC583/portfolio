@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { LazyMotion, m, domAnimation, useScroll, useTransform } from 'framer-motion'
 import ScrollProgress from '../components/ScrollProgress'
 import Navigation from '../components/Navigation'
 import Hero from '../components/Hero'
@@ -14,9 +14,10 @@ export default function Home() {
   const gridY = useTransform(scrollY, (v) => v * -0.15)
 
   return (
+    <LazyMotion features={domAnimation}>
     <main className="min-h-screen bg-surface">
       <ScrollProgress />
-      <motion.div
+      <m.div
         className="fixed inset-0 pointer-events-none z-0"
         style={{
           backgroundImage: `
@@ -44,5 +45,6 @@ export default function Home() {
         <Contact />
       </section>
     </main>
+    </LazyMotion>
   )
 }
